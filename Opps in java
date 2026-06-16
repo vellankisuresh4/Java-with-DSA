@@ -1,0 +1,564 @@
+# OOPS Concepts in Java – Clear and Detailed Explanation
+
+## What is OOPS?
+
+**OOPS (Object-Oriented Programming System)** is a programming approach that organizes software around **objects and classes** rather than functions and logic.
+
+Java uses OOPS concepts to make programs:
+
+* Reusable
+* Secure
+* Easy to maintain
+* Easy to understand
+
+### Definition
+
+**Object-Oriented Programming (OOP)** is a programming paradigm that uses objects and classes to design and develop applications based on real-world entities.
+
+---
+
+# Basic Terminologies in OOPS
+
+## 1. Class
+
+### Definition
+
+A **class** is a blueprint or template used to create objects.
+
+It contains:
+
+* Data (Variables)
+* Methods (Functions)
+
+### Example
+
+```java
+class Student
+{
+    int id;
+    String name;
+
+    void display()
+    {
+        System.out.println(id + " " + name);
+    }
+}
+```
+
+Here, `Student` is a class.
+
+---
+
+## 2. Object
+
+### Definition
+
+An **object** is an instance of a class.
+
+When memory is allocated to a class, an object is created.
+
+### Example
+
+```java
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Student s1 = new Student();
+
+        s1.id = 101;
+        s1.name = "Suresh";
+
+        s1.display();
+    }
+}
+```
+
+### Output
+
+```text
+101 Suresh
+```
+
+---
+
+# Four Pillars of OOPS
+
+1. Encapsulation
+2. Inheritance
+3. Polymorphism
+4. Abstraction
+
+---
+
+# 1. Encapsulation
+
+## Definition
+
+**Encapsulation** is the process of wrapping data (variables) and methods (functions) into a single unit and restricting direct access to data.
+
+It is achieved using:
+
+* Private variables
+* Public getter and setter methods
+
+### Real-Life Example
+
+A capsule contains medicine inside a protective cover.
+
+Similarly, data is protected inside a class.
+
+### Example
+
+```java
+class Employee
+{
+    private int salary;
+
+    public void setSalary(int salary)
+    {
+        this.salary = salary;
+    }
+
+    public int getSalary()
+    {
+        return salary;
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Employee e = new Employee();
+
+        e.setSalary(50000);
+
+        System.out.println(e.getSalary());
+    }
+}
+```
+
+### Output
+
+```text
+50000
+```
+
+### Advantages of Encapsulation
+
+* Data security
+* Data hiding
+* Better control over data
+* Easy maintenance
+
+---
+
+# 2. Inheritance
+
+## Definition
+
+**Inheritance** is the process by which one class acquires the properties and methods of another class.
+
+The existing class is called:
+
+* Parent Class
+* Super Class
+* Base Class
+
+The new class is called:
+
+* Child Class
+* Derived Class
+* Sub Class
+
+### Syntax
+
+```java
+class Parent
+{
+}
+
+class Child extends Parent
+{
+}
+```
+
+### Example
+
+```java
+class Animal
+{
+    void eat()
+    {
+        System.out.println("Animal Eats");
+    }
+}
+
+class Dog extends Animal
+{
+    void bark()
+    {
+        System.out.println("Dog Barks");
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Dog d = new Dog();
+
+        d.eat();
+        d.bark();
+    }
+}
+```
+
+### Output
+
+```text
+Animal Eats
+Dog Barks
+```
+
+### Advantages
+
+* Code reusability
+* Reduces duplication
+* Easy extension of programs
+
+---
+
+## Types of Inheritance
+
+### 1. Single Inheritance
+
+```text
+A → B
+```
+
+One child inherits from one parent.
+
+---
+
+### 2. Multilevel Inheritance
+
+```text
+A → B → C
+```
+
+A chain of inheritance.
+
+---
+
+### 3. Hierarchical Inheritance
+
+```text
+      A
+     / \
+    B   C
+```
+
+Multiple child classes inherit from one parent.
+
+---
+
+### 4. Multiple Inheritance
+
+```text
+A + B → C
+```
+
+Not supported using classes in Java.
+
+Supported using Interfaces.
+
+---
+
+# 3. Polymorphism
+
+## Definition
+
+**Polymorphism** means "One Name, Many Forms."
+
+A single method can perform different tasks depending on the situation.
+
+### Types
+
+1. Compile-Time Polymorphism
+2. Run-Time Polymorphism
+
+---
+
+## A. Method Overloading (Compile-Time Polymorphism)
+
+### Definition
+
+Multiple methods having:
+
+* Same name
+* Different parameters
+
+### Example
+
+```java
+class Addition
+{
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+
+    int add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+}
+```
+
+### Output
+
+```text
+add(10,20)      = 30
+add(10,20,30)   = 60
+```
+
+---
+
+## B. Method Overriding (Run-Time Polymorphism)
+
+### Definition
+
+A child class provides its own implementation of a method already defined in the parent class.
+
+### Example
+
+```java
+class Animal
+{
+    void sound()
+    {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal
+{
+    void sound()
+    {
+        System.out.println("Dog Barks");
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Animal a = new Dog();
+
+        a.sound();
+    }
+}
+```
+
+### Output
+
+```text
+Dog Barks
+```
+
+### Advantages
+
+* Flexibility
+* Dynamic method execution
+* Better scalability
+
+---
+
+# 4. Abstraction
+
+## Definition
+
+**Abstraction** means hiding implementation details and showing only the essential features to the user.
+
+### Real-Life Example
+
+When driving a car:
+
+* You use steering, brakes, accelerator.
+* You don't need to know the internal engine mechanism.
+
+This is abstraction.
+
+---
+
+## Achieving Abstraction
+
+1. Abstract Class
+2. Interface
+
+---
+
+## Abstract Class
+
+### Definition
+
+A class declared with the `abstract` keyword.
+
+It may contain:
+
+* Abstract methods
+* Normal methods
+
+### Example
+
+```java
+abstract class Vehicle
+{
+    abstract void start();
+}
+
+class Car extends Vehicle
+{
+    void start()
+    {
+        System.out.println("Car Starts");
+    }
+}
+```
+
+---
+
+## Interface
+
+### Definition
+
+An interface contains abstract methods that must be implemented by a class.
+
+### Example
+
+```java
+interface Shape
+{
+    void draw();
+}
+
+class Circle implements Shape
+{
+    public void draw()
+    {
+        System.out.println("Drawing Circle");
+    }
+}
+```
+
+---
+
+# Constructor
+
+## Definition
+
+A constructor is a special method used to initialize objects.
+
+### Characteristics
+
+* Same name as class name
+* No return type
+* Automatically called when object is created
+
+### Example
+
+```java
+class Student
+{
+    Student()
+    {
+        System.out.println("Constructor Called");
+    }
+}
+```
+
+---
+
+# this Keyword
+
+## Definition
+
+The `this` keyword refers to the current object of the class.
+
+### Example
+
+```java
+class Student
+{
+    int id;
+
+    Student(int id)
+    {
+        this.id = id;
+    }
+}
+```
+
+---
+
+# super Keyword
+
+## Definition
+
+The `super` keyword refers to the parent class object.
+
+### Example
+
+```java
+class Animal
+{
+    String color = "White";
+}
+
+class Dog extends Animal
+{
+    String color = "Black";
+
+    void display()
+    {
+        System.out.println(super.color);
+    }
+}
+```
+
+### Output
+
+```text
+White
+```
+
+---
+
+# Advantages of OOPS
+
+1. Code Reusability
+2. Data Security
+3. Easy Maintenance
+4. Better Organization
+5. Flexibility
+6. Scalability
+7. Reduced Development Time
+
+---
+
+# Comparison of Four Pillars
+
+| Concept       | Definition                              | Purpose     |
+| ------------- | --------------------------------------- | ----------- |
+| Encapsulation | Wrapping data and methods together      | Security    |
+| Inheritance   | Acquiring properties from another class | Reusability |
+| Polymorphism  | One method, many forms                  | Flexibility |
+| Abstraction   | Hiding implementation details           | Simplicity  |
+
+---
+
+# Exam Definition (5 Marks)
+
+**OOPS (Object-Oriented Programming System)** is a programming methodology that organizes software using classes and objects. It is based on four main concepts: **Encapsulation, Inheritance, Polymorphism, and Abstraction**. These concepts help improve code reusability, security, maintainability, and scalability, making software development more efficient and organized.
