@@ -1,0 +1,391 @@
+# Functions (Methods) in Java
+
+In Java, a **function** is called a **method**. A method is a block of code that performs a specific task and can be reused multiple times.
+
+## Syntax
+
+```java
+returnType methodName(parameters)
+{
+    // code
+    return value;
+}
+```
+
+### Example
+
+```java
+public class Main
+{
+    static void greet()
+    {
+        System.out.println("Hello Java");
+    }
+
+    public static void main(String[] args)
+    {
+        greet();
+    }
+}
+```
+
+**Output:**
+
+```
+Hello Java
+```
+
+---
+
+# Types of Methods in Java
+
+## 1. Method with No Parameters and No Return Value
+
+```java
+public class Main
+{
+    static void display()
+    {
+        System.out.println("Welcome");
+    }
+
+    public static void main(String[] args)
+    {
+        display();
+    }
+}
+```
+
+**Output:**
+
+```
+Welcome
+```
+
+---
+
+## 2. Method with Parameters and No Return Value
+
+```java
+public class Main
+{
+    static void add(int a, int b)
+    {
+        System.out.println(a + b);
+    }
+
+    public static void main(String[] args)
+    {
+        add(10, 20);
+    }
+}
+```
+
+**Output:**
+
+```
+30
+```
+
+---
+
+## 3. Method with No Parameters and Return Value
+
+```java
+public class Main
+{
+    static int getNumber()
+    {
+        return 100;
+    }
+
+    public static void main(String[] args)
+    {
+        int n = getNumber();
+        System.out.println(n);
+    }
+}
+```
+
+**Output:**
+
+```
+100
+```
+
+---
+
+## 4. Method with Parameters and Return Value
+
+```java
+public class Main
+{
+    static int add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public static void main(String[] args)
+    {
+        int result = add(10, 20);
+        System.out.println(result);
+    }
+}
+```
+
+**Output:**
+
+```
+30
+```
+
+---
+
+# Common Functions in Java
+
+## Function to Find Square
+
+```java
+public class Main
+{
+    static int square(int n)
+    {
+        return n * n;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(square(5));
+    }
+}
+```
+
+**Output:**
+
+```
+25
+```
+
+---
+
+## Function to Check Even or Odd
+
+```java
+public class Main
+{
+    static void checkEvenOdd(int n)
+    {
+        if(n % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+    }
+
+    public static void main(String[] args)
+    {
+        checkEvenOdd(8);
+    }
+}
+```
+
+**Output:**
+
+```
+Even
+```
+
+---
+
+## Function to Check Prime Number
+
+```java
+public class Main
+{
+    static boolean isPrime(int n)
+    {
+        if(n <= 1)
+            return false;
+
+        for(int i = 2; i <= n/2; i++)
+        {
+            if(n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(isPrime(13));
+    }
+}
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+## Function to Find Factorial
+
+```java
+public class Main
+{
+    static int factorial(int n)
+    {
+        int fact = 1;
+
+        for(int i = 1; i <= n; i++)
+        {
+            fact *= i;
+        }
+
+        return fact;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(factorial(5));
+    }
+}
+```
+
+**Output:**
+
+```
+120
+```
+
+---
+
+## Function to Reverse a Number
+
+```java
+public class Main
+{
+    static int reverse(int n)
+    {
+        int rev = 0;
+
+        while(n > 0)
+        {
+            rev = rev * 10 + n % 10;
+            n /= 10;
+        }
+
+        return rev;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(reverse(1234));
+    }
+}
+```
+
+**Output:**
+
+```
+4321
+```
+
+---
+
+# Method Overloading
+
+Multiple methods with the same name but different parameters.
+
+```java
+public class Main
+{
+    static int add(int a, int b)
+    {
+        return a + b;
+    }
+
+    static int add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(add(10, 20));
+        System.out.println(add(10, 20, 30));
+    }
+}
+```
+
+**Output:**
+
+```
+30
+60
+```
+
+---
+
+# Recursive Function
+
+A function that calls itself.
+
+### Factorial Using Recursion
+
+```java
+public class Main
+{
+    static int factorial(int n)
+    {
+        if(n == 0)
+            return 1;
+
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(factorial(5));
+    }
+}
+```
+
+**Output:**
+
+```
+120
+```
+
+---
+
+# Key Points for Exams
+
+1. A function in Java is called a **method**.
+2. Methods improve **code reusability**.
+3. Methods can have **parameters** and **return values**.
+4. `void` methods do not return anything.
+5. `return` keyword sends a value back to the caller.
+6. Java supports **method overloading**.
+7. Methods can be **static** or **non-static**.
+8. Recursion is a method calling itself.
+
+### General Method Syntax
+
+```java
+access_modifier static returnType methodName(parameters)
+{
+    // statements
+    return value;
+}
+```
+
+Example:
+
+```java
+public static int add(int a, int b)
+{
+    return a + b;
+}
+```
