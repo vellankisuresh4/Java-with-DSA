@@ -1,0 +1,379 @@
+# Multithreading in Java
+
+## What is Multithreading?
+
+**Multithreading** is a feature of Java that allows multiple threads (smallest units of execution) to run concurrently within a program.
+
+A thread is a lightweight subprocess. Multithreading helps improve CPU utilization and program performance.
+
+### Example
+
+* Listening to music while downloading a file.
+* Typing a document while printing another document.
+
+---
+
+# Advantages of Multithreading
+
+1. Better CPU utilization.
+2. Faster execution of tasks.
+3. Improved application responsiveness.
+4. Efficient use of system resources.
+5. Supports concurrent execution.
+
+---
+
+# Thread Life Cycle
+
+A thread passes through the following states:
+
+```text
+New → Runnable → Running → Waiting/Blocked → Terminated
+```
+
+1. **New** – Thread object is created.
+2. **Runnable** – Thread is ready to run.
+3. **Running** – Thread is executing.
+4. **Waiting/Blocked** – Thread waits for a resource.
+5. **Terminated** – Thread execution ends.
+
+---
+
+# Creating Threads in Java
+
+There are two ways:
+
+## 1. Extending the Thread Class
+
+```java
+class MyThread extends Thread
+{
+    public void run()
+    {
+        for(int i = 1; i <= 5; i++)
+        {
+            System.out.println("Thread is running: " + i);
+        }
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        MyThread t1 = new MyThread();
+        t1.start();
+    }
+}
+```
+
+### Output
+
+```text
+Thread is running: 1
+Thread is running: 2
+Thread is running: 3
+Thread is running: 4
+Thread is running: 5
+```
+
+---
+
+## 2. Implementing Runnable Interface
+
+```java
+class MyThread implements Runnable
+{
+    public void run()
+    {
+        for(int i = 1; i <= 5; i++)
+        {
+            System.out.println(i);
+        }
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        MyThread obj = new MyThread();
+
+        Thread t1 = new Thread(obj);
+
+        t1.start();
+    }
+}
+```
+
+---
+
+# Difference Between start() and run()
+
+| start()                 | run()                       |
+| ----------------------- | --------------------------- |
+| Creates a new thread    | Executes as a normal method |
+| JVM schedules execution | No new thread created       |
+| Used for multithreading | Used for normal execution   |
+
+Example:
+
+```java
+MyThread t = new MyThread();
+
+t.start(); // New thread created
+```
+
+---
+
+# Using Multiple Threads
+
+```java
+class A extends Thread
+{
+    public void run()
+    {
+        for(int i = 1; i <= 5; i++)
+        {
+            System.out.println("A : " + i);
+        }
+    }
+}
+
+class B extends Thread
+{
+    public void run()
+    {
+        for(int i = 1; i <= 5; i++)
+        {
+            System.out.println("B : " + i);
+        }
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        A t1 = new A();
+        B t2 = new B();
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+### Possible Output
+
+```text
+A : 1
+B : 1
+A : 2
+B : 2
+A : 3
+B : 3
+...
+```
+
+(The order may vary because threads execute independently.)
+
+---
+
+# Important Thread Methods
+
+## 1. sleep()
+
+Pauses a thread for a specified time.
+
+```java
+class MyThread extends Thread
+{
+    public void run()
+    {
+        for(int i = 1; i <= 5; i++)
+        {
+            System.out.println(i);
+
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch(Exception e)
+            {
+            }
+        }
+    }
+}
+```
+
+---
+
+## 2. join()
+
+Makes one thread wait for another thread to finish.
+
+```java
+class A extends Thread
+{
+    public void run()
+    {
+        System.out.println("Thread A");
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+            throws Exception
+    {
+        A t1 = new A();
+
+        t1.start();
+
+        t1.join();
+
+        System.out.println("Main Thread");
+    }
+}
+```
+
+### Output
+
+```text
+Thread A
+Main Thread
+```
+
+---
+
+## 3. isAlive()
+
+Checks whether a thread is still running.
+
+```java
+System.out.println(t1.isAlive());
+```
+
+Returns:
+
+```text
+true
+```
+
+or
+
+```text
+false
+```
+
+---
+
+# Thread Priority
+
+Priority ranges from **1 to 10**.
+
+| Constant      | Value |
+| ------------- | ----- |
+| MIN_PRIORITY  | 1     |
+| NORM_PRIORITY | 5     |
+| MAX_PRIORITY  | 10    |
+
+Example:
+
+```java
+Thread t1 = new Thread();
+
+t1.setPriority(Thread.MAX_PRIORITY);
+```
+
+---
+
+# Synchronization
+
+Synchronization prevents multiple threads from accessing shared resources simultaneously.
+
+### Without Synchronization
+
+Data inconsistency may occur.
+
+### With Synchronization
+
+```java
+class Table
+{
+    synchronized void printTable(int n)
+    {
+        for(int i = 1; i <= 5; i++)
+        {
+            System.out.println(n * i);
+        }
+    }
+}
+```
+
+---
+
+# Producer-Consumer Concept
+
+One thread produces data and another consumes it.
+
+Commonly implemented using:
+
+* `wait()`
+* `notify()`
+* `notifyAll()`
+
+Used in:
+
+* Buffer management
+* Message queues
+* Real-time applications
+
+---
+
+# Real-Life Applications of Multithreading
+
+1. Web servers
+2. Gaming applications
+3. Banking systems
+4. Chat applications
+5. File downloading
+6. Video streaming
+7. Operating systems
+
+---
+
+# Frequently Asked Interview/Exam Questions
+
+### What is a Thread?
+
+A thread is the smallest unit of execution within a process.
+
+### What is Multithreading?
+
+Running multiple threads concurrently in a single program.
+
+### How do you create a thread in Java?
+
+1. Extending `Thread` class.
+2. Implementing `Runnable` interface.
+
+### Why use Synchronization?
+
+To avoid data inconsistency when multiple threads access shared resources.
+
+### What is the difference between Process and Thread?
+
+| Process             | Thread            |
+| ------------------- | ----------------- |
+| Independent program | Part of a process |
+| More memory         | Less memory       |
+| Slower creation     | Faster creation   |
+| Heavyweight         | Lightweight       |
+
+---
+
+## Short Exam Definition
+
+**Multithreading** is a Java feature that allows multiple threads to execute concurrently within a single program, improving performance, responsiveness, and efficient utilization of CPU resources.
