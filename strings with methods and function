@@ -1,0 +1,776 @@
+# Strings in Java with Methods and Functions
+
+A **String** in Java is a sequence of characters enclosed in double quotes (`""`).
+
+```java
+String str = "Hello";
+```
+
+## Important String Methods
+
+### 1. `length()`
+
+Returns the number of characters in a string.
+
+```java
+String str = "Java";
+System.out.println(str.length());
+```
+
+**Output:**
+
+```
+4
+```
+
+---
+
+### 2. `charAt(index)`
+
+Returns the character at the specified index.
+
+```java
+String str = "Java";
+System.out.println(str.charAt(2));
+```
+
+**Output:**
+
+```
+v
+```
+
+---
+
+### 3. `toUpperCase()`
+
+Converts the string to uppercase.
+
+```java
+String str = "java";
+System.out.println(str.toUpperCase());
+```
+
+**Output:**
+
+```
+JAVA
+```
+
+---
+
+### 4. `toLowerCase()`
+
+Converts the string to lowercase.
+
+```java
+String str = "JAVA";
+System.out.println(str.toLowerCase());
+```
+
+**Output:**
+
+```
+java
+```
+
+---
+
+### 5. `equals()`
+
+Compares two strings.
+
+```java
+String s1 = "Java";
+String s2 = "Java";
+
+System.out.println(s1.equals(s2));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 6. `equalsIgnoreCase()`
+
+Compares strings ignoring case.
+
+```java
+String s1 = "JAVA";
+String s2 = "java";
+
+System.out.println(s1.equalsIgnoreCase(s2));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 7. `contains()`
+
+Checks whether a string contains a specified sequence.
+
+```java
+String str = "Hello Java";
+
+System.out.println(str.contains("Java"));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 8. `substring()`
+
+Extracts part of a string.
+
+```java
+String str = "Programming";
+
+System.out.println(str.substring(3));
+System.out.println(str.substring(3, 7));
+```
+
+**Output:**
+
+```
+gramming
+gram
+```
+
+---
+
+### 9. `indexOf()`
+
+Returns the position of a character or string.
+
+```java
+String str = "Programming";
+
+System.out.println(str.indexOf('g'));
+```
+
+**Output:**
+
+```
+3
+```
+
+---
+
+### 10. `replace()`
+
+Replaces characters or strings.
+
+```java
+String str = "Java";
+
+System.out.println(str.replace('a', 'o'));
+```
+
+**Output:**
+
+```
+Jovo
+```
+
+---
+
+### 11. `trim()`
+
+Removes leading and trailing spaces.
+
+```java
+String str = "   Hello   ";
+
+System.out.println(str.trim());
+```
+
+**Output:**
+
+```
+Hello
+```
+
+---
+
+### 12. `startsWith()`
+
+Checks if the string starts with specified text.
+
+```java
+String str = "Java Programming";
+
+System.out.println(str.startsWith("Java"));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 13. `endsWith()`
+
+Checks if the string ends with specified text.
+
+```java
+String str = "Java Programming";
+
+System.out.println(str.endsWith("ming"));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 14. `split()`
+
+Splits a string into an array.
+
+```java
+String str = "Java,Python,C++";
+
+String[] arr = str.split(",");
+
+for(String s : arr)
+{
+    System.out.println(s);
+}
+```
+
+**Output:**
+
+```
+Java
+Python
+C++
+```
+
+---
+
+### 15. `concat()`
+
+Joins two strings.
+
+```java
+String s1 = "Hello";
+String s2 = " Java";
+
+System.out.println(s1.concat(s2));
+```
+# Strings in Java with Methods and Functions
+
+A **String** in Java is a sequence of characters enclosed in double quotes (`""`).
+
+```java
+String str = "Hello";
+```
+
+## Important String Methods
+
+### 1. `length()`
+
+Returns the number of characters in a string.
+
+```java
+String str = "Java";
+System.out.println(str.length());
+```
+
+**Output:**
+
+```
+4
+```
+
+---
+
+### 2. `charAt(index)`
+
+Returns the character at the specified index.
+
+```java
+String str = "Java";
+System.out.println(str.charAt(2));
+```
+
+**Output:**
+
+```
+v
+```
+
+---
+
+### 3. `toUpperCase()`
+
+Converts the string to uppercase.
+
+```java
+String str = "java";
+System.out.println(str.toUpperCase());
+```
+
+**Output:**
+
+```
+JAVA
+```
+
+---
+
+### 4. `toLowerCase()`
+
+Converts the string to lowercase.
+
+```java
+String str = "JAVA";
+System.out.println(str.toLowerCase());
+```
+
+**Output:**
+
+```
+java
+```
+
+---
+
+### 5. `equals()`
+
+Compares two strings.
+
+```java
+String s1 = "Java";
+String s2 = "Java";
+
+System.out.println(s1.equals(s2));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 6. `equalsIgnoreCase()`
+
+Compares strings ignoring case.
+
+```java
+String s1 = "JAVA";
+String s2 = "java";
+
+System.out.println(s1.equalsIgnoreCase(s2));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 7. `contains()`
+
+Checks whether a string contains a specified sequence.
+
+```java
+String str = "Hello Java";
+
+System.out.println(str.contains("Java"));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 8. `substring()`
+
+Extracts part of a string.
+
+```java
+String str = "Programming";
+
+System.out.println(str.substring(3));
+System.out.println(str.substring(3, 7));
+```
+
+**Output:**
+
+```
+gramming
+gram
+```
+
+---
+
+### 9. `indexOf()`
+
+Returns the position of a character or string.
+
+```java
+String str = "Programming";
+
+System.out.println(str.indexOf('g'));
+```
+
+**Output:**
+
+```
+3
+```
+
+---
+
+### 10. `replace()`
+
+Replaces characters or strings.
+
+```java
+String str = "Java";
+
+System.out.println(str.replace('a', 'o'));
+```
+
+**Output:**
+
+```
+Jovo
+```
+
+---
+
+### 11. `trim()`
+
+Removes leading and trailing spaces.
+
+```java
+String str = "   Hello   ";
+
+System.out.println(str.trim());
+```
+
+**Output:**
+
+```
+Hello
+```
+
+---
+
+### 12. `startsWith()`
+
+Checks if the string starts with specified text.
+
+```java
+String str = "Java Programming";
+
+System.out.println(str.startsWith("Java"));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 13. `endsWith()`
+
+Checks if the string ends with specified text.
+
+```java
+String str = "Java Programming";
+
+System.out.println(str.endsWith("ming"));
+```
+
+**Output:**
+
+```
+true
+```
+
+---
+
+### 14. `split()`
+
+Splits a string into an array.
+
+```java
+String str = "Java,Python,C++";
+
+String[] arr = str.split(",");
+
+for(String s : arr)
+{
+    System.out.println(s);
+}
+```
+
+**Output:**
+
+```
+Java
+Python
+C++
+```
+
+---
+
+### 15. `concat()`
+
+Joins two strings.
+
+```java
+String s1 = "Hello";
+String s2 = " Java";
+
+System.out.println(s1.concat(s2));
+```
+
+**Output:**
+
+```
+Hello Java
+```
+
+---
+
+## User-Defined Function Using String
+
+### Check Palindrome String
+
+```java
+import java.util.*;
+
+public class Main
+{
+    static boolean isPalindrome(String str)
+    {
+        String rev = "";
+
+        for(int i = str.length()-1; i >= 0; i--)
+        {
+            rev += str.charAt(i);
+        }
+
+        return str.equals(rev);
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        if(isPalindrome(str))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+```
+
+---
+
+## Common String Interview Programs
+
+### Reverse a String
+
+```java
+String str = "Java";
+String rev = "";
+
+for(int i = str.length()-1; i >= 0; i--)
+{
+    rev += str.charAt(i);
+}
+
+System.out.println(rev);
+```
+
+**Output:**
+
+```
+avaJ
+```
+
+---
+
+### Count Vowels
+
+```java
+String str = "Programming";
+int count = 0;
+
+for(int i = 0; i < str.length(); i++)
+{
+    char ch = Character.toLowerCase(str.charAt(i));
+
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+        count++;
+}
+
+System.out.println("Vowels = " + count);
+```
+
+---
+
+## Frequently Used String Methods Summary
+
+| Method          | Purpose                |
+| --------------- | ---------------------- |
+| `length()`      | Find string length     |
+| `charAt()`      | Get character at index |
+| `equals()`      | Compare strings        |
+| `contains()`    | Check substring        |
+| `substring()`   | Extract part of string |
+| `replace()`     | Replace characters     |
+| `toUpperCase()` | Convert to uppercase   |
+| `toLowerCase()` | Convert to lowercase   |
+| `trim()`        | Remove spaces          |
+| `indexOf()`     | Find position          |
+| `split()`       | Split string           |
+| `concat()`      | Join strings           |
+| `startsWith()`  | Check beginning        |
+| `endsWith()`    | Check ending           |
+
+These are the most important String methods commonly asked in Java interviews, coding rounds, and exams.
+
+**Output:**
+
+```
+Hello Java
+```
+
+---
+
+## User-Defined Function Using String
+
+### Check Palindrome String
+
+```java
+import java.util.*;
+
+public class Main
+{
+    static boolean isPalindrome(String str)
+    {
+        String rev = "";
+
+        for(int i = str.length()-1; i >= 0; i--)
+        {
+            rev += str.charAt(i);
+        }
+
+        return str.equals(rev);
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        if(isPalindrome(str))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+```
+
+---
+
+## Common String Interview Programs
+
+### Reverse a String
+
+```java
+String str = "Java";
+String rev = "";
+
+for(int i = str.length()-1; i >= 0; i--)
+{
+    rev += str.charAt(i);
+}
+
+System.out.println(rev);
+```
+
+**Output:**
+
+```
+avaJ
+```
+
+---
+
+### Count Vowels
+
+```java
+String str = "Programming";
+int count = 0;
+
+for(int i = 0; i < str.length(); i++)
+{
+    char ch = Character.toLowerCase(str.charAt(i));
+
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+        count++;
+}
+
+System.out.println("Vowels = " + count);
+```
+
+---
+
+## Frequently Used String Methods Summary
+
+| Method          | Purpose                |
+| --------------- | ---------------------- |
+| `length()`      | Find string length     |
+| `charAt()`      | Get character at index |
+| `equals()`      | Compare strings        |
+| `contains()`    | Check substring        |
+| `substring()`   | Extract part of string |
+| `replace()`     | Replace characters     |
+| `toUpperCase()` | Convert to uppercase   |
+| `toLowerCase()` | Convert to lowercase   |
+| `trim()`        | Remove spaces          |
+| `indexOf()`     | Find position          |
+| `split()`       | Split string           |
+| `concat()`      | Join strings           |
+| `startsWith()`  | Check beginning        |
+| `endsWith()`    | Check ending           |
+
+These are the most important String methods commonly asked in Java interviews, coding rounds, and exams.
