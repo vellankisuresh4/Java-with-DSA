@@ -1,0 +1,181 @@
+### Control Statements in Java
+
+Control statements determine the flow of execution in a Java program. They are mainly categorized into:
+
+## 1. Decision-Making Statements
+
+These statements execute different blocks of code based on conditions.
+
+### `if` Statement
+
+```java
+int age = 20;
+
+if (age >= 18) {
+    System.out.println("Eligible to vote");
+}
+```
+
+### `if-else` Statement
+
+```java
+int num = 5;
+
+if (num % 2 == 0) {
+    System.out.println("Even");
+} else {
+    System.out.println("Odd");
+}
+```
+
+### `if-else-if` Ladder
+
+```java
+int marks = 85;
+
+if (marks >= 90) {
+    System.out.println("Grade A");
+} else if (marks >= 75) {
+    System.out.println("Grade B");
+} else {
+    System.out.println("Grade C");
+}
+```
+
+### `switch` Statement
+
+```java
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Invalid Day");
+}
+```
+
+---
+
+## 2. Looping Statements
+
+Used to execute a block of code repeatedly.
+
+### `for` Loop
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+### `while` Loop
+
+```java
+int i = 1;
+
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+### `do-while` Loop
+
+```java
+int i = 1;
+
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+```
+
+### Enhanced `for` Loop (for-each)
+
+```java
+int[] nums = {10, 20, 30};
+
+for (int n : nums) {
+    System.out.println(n);
+}
+```
+
+---
+
+## 3. Jump Statements
+
+Used to alter the normal flow of a program.
+
+### `break`
+
+Terminates the loop or switch statement.
+
+```java
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    System.out.println(i);
+}
+```
+
+Output:
+
+```
+1
+2
+3
+4
+```
+
+### `continue`
+
+Skips the current iteration and moves to the next one.
+
+```java
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue;
+    }
+    System.out.println(i);
+}
+```
+
+Output:
+
+```
+1
+2
+4
+5
+```
+
+### `return`
+
+Exits a method and optionally returns a value.
+
+```java
+public static int square(int n) {
+    return n * n;
+}
+```
+
+---
+
+### Summary Table
+
+| Type            | Statements                              |
+| --------------- | --------------------------------------- |
+| Decision-Making | `if`, `if-else`, `if-else-if`, `switch` |
+| Looping         | `for`, `while`, `do-while`, `for-each`  |
+| Jump            | `break`, `continue`, `return`           |
+
+These control statements are fundamental for implementing logic and repetition in Java programs.
