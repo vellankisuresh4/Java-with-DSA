@@ -1,0 +1,265 @@
+👍#program for boolean operation.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        boolean opposite=((a^b)<0);
+        
+        System.out.println(opposite);
+    }
+}
+
+👍#code even or odd.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+         
+        if(a%2==0)
+        
+        System.out.println("Is even"+a);
+        else
+        System.out.println("is odd"+a);
+    }
+}
+
+👍code for even or odd fo a range
+ import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the range: ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0)
+                System.out.println(i + " is Even");
+            else
+                System.out.println(i + " is Odd");
+        }
+
+        sc.close();
+    }
+}
+👍#code for finding for the factorial for a range.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+         int fact=1;
+         if(a<0)
+         {
+             System.out.println("we cannot find the factorial");
+         }
+         else
+         {
+             for(int i=1;i<=a;i++)
+             {
+                 fact=fact*i;
+             }
+             System.out.println("factorial of"+a+"="+fact);
+             
+         }
+        
+}
+}
+
+👍#code for to find the factorial for given range.
+ import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+
+        if (a < 0) {
+            System.out.println("We cannot find the factorial");
+        } else {
+            for (int n = 1; n <= a; n++) {
+                int fact = 1;
+
+                for (int i = 1; i <= n; i++) {
+                    fact = fact * i;
+                }
+
+                System.out.println("Factorial of " + n + " = " + fact);
+            }
+        }
+
+        sc.close();
+    }
+}
+
+👍prime or not
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        boolean isPrime = true;
+
+        if (n <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime)
+            System.out.println(n + " is Prime");
+        else
+            System.out.println(n + " is Not Prime");
+    }
+}
+
+👍prime numbers for a range
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for (int num = 2; num <= n; num++) {
+            boolean isPrime = true;
+
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
+
+👍sum and product of digits
+import java.util.Scanner;
+
+public class sumofdigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int sum = 0;
+        int product = 1;
+        int temp = num;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += digit;
+            product *= digit;
+            temp /= 10;
+        }
+
+        System.out.println("Sum of digits = " + sum);
+        System.out.println("Product of digits = " + product);
+
+        sc.close();
+    }
+}
+
+👍magic number
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        while (n > 9) {
+            int sum = 0;
+
+            while (n > 0) {
+                sum = sum + (n % 10);
+                n = n / 10;
+            }
+
+            n = sum;
+        }
+
+        if (n == 1)
+            System.out.println("Magic Number");
+        else
+            System.out.println("Not a Magic Number");
+    }
+}
+
+
+👍happy number
+import java.util.*;
+
+public class Main {
+    
+    static int sumOfSquares(int n) {
+        int sum = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        while (n != 1 && n != 4) {
+            n = sumOfSquares(n);
+        }
+
+        if (n == 1)
+            System.out.println("Happy Number");
+        else
+            System.out.println("Not a Happy Number");
+    }
+}
+
+👍perfect number
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int sum = 0;
+
+        for(int i = 1; i < n; i++) {
+            if(n % i == 0) {
+                sum += i;
+            }
+        }
+
+        if(sum == n)
+            System.out.println("Perfect Number");
+        else
+            System.out.println("Not a Perfect Number");
+    }
+}
