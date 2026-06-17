@@ -1,0 +1,282 @@
+Here are **simple Java programs** for the most commonly asked patterns in your image.
+
+---
+
+# 1. Square Hollow Pattern
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n)
+                    System.out.print("* ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 2. Number Triangle
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 4;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+Output:
+
+```
+1
+2 2
+3 3 3
+4 4 4 4
+```
+
+---
+
+# 3. Number Increasing Pyramid
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 4;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+Output:
+
+```
+1
+1 2
+1 2 3
+1 2 3 4
+```
+
+---
+
+# 4. Reverse Number Pyramid
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 4;
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 5. Right Half Pyramid
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 6. Reverse Right Half Pyramid
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 7. Left Half Pyramid
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+
+            for (int k = 1; k <= i; k++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 8. Triangle Star Pattern
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 9. Hollow Triangle Pattern
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= 2 * i - 1; k++) {
+
+                if (i == n || k == 1 || k == 2 * i - 1)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 10. Diamond Pattern
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++)
+                System.out.print(" ");
+
+            for (int k = 1; k <= 2 * i - 1; k++)
+                System.out.print("*");
+
+            System.out.println();
+        }
+
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = n; j > i; j--)
+                System.out.print(" ");
+
+            for (int k = 1; k <= 2 * i - 1; k++)
+                System.out.print("*");
+
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 11. Pascal's Triangle
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 0; i < n; i++) {
+            int num = 1;
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num = num * (i - j) / (j + 1);
+            }
+
+            System.out.println();
+        }
+    }
+}
+```
+
+Output:
+
+```
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+```
+
+These 11 patterns cover the most important interview/exam patterns. Once you learn these, the remaining patterns in the image become easy variations.
